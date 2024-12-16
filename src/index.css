@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.perspective {
+  perspective: 1000px; /* Perspektiv for 3D-effekten */
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d; /* Beholder 3D-strukturen */
+}
+
+.backface-hidden {
+  backface-visibility: hidden; /* Skjuler baksiden når den ikke vises */
+}
+
+.rotateY-180 {
+  transform: rotateY(-180deg); /* Roterer kortet 180 grader */
+}
+
+.snowflake {
+  position: absolute; /* Snøflaket er posisjonert absolutt i skjermen */
+  top: -30px; /* Start over toppen av skjermen */
+  animation: snowFall linear infinite; /* Animasjonen går uendelig */
+  pointer-events: none; /* Forhindrer brukerinteraksjon */
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translate(0, -10px); /* Start på toppen */
+    opacity: 1; /* Full synlighet */
+  }
+  100% {
+    transform: translate(
+      calc(-25px + -15vw),
+      100vh
+    ); /* Faller skrått ned til bunnen */
+    opacity: 0.5; /* Litt gjennomsiktig når det når bunnen */
+  }
+}
