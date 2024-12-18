@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <div>
         <img
           src={mainImage}
-          className="absolute inset-0 object-cover w-full h-full rounded-lg"
+          className="absolute inset-0 object-cover w-full h-full "
           draggable="false" // Hindrer dra og slipp
         />
       </div>
